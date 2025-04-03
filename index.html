@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    width: 80%;
+    height: 80vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+}
+
+.header, .footer, .nav, .article, .ads {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: bold;
+}
+
+/* Postavljanje elemenata unutar grid-a */
+.header {
+    grid-column: 1 / -1;
+    background-color: palevioletred;
+}
+
+.nav {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: blueviolet;
+}
+
+.article {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: aqua;
+}
+
+.ads {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-color: orange;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    background-color: green;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">Header</header>
+        <nav class="nav">Nav</nav>
+        <article class="article">Article</article>
+        <aside class="ads">Ads</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
